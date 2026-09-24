@@ -2,10 +2,14 @@ import base64
 import requests
 import urllib.parse
 import secrets
+import os
+from dotenv import load_dontenv
+
+load_dontenv()
 
 # 1. Define your application credentials and settings
-CLIENT_ID = '414e588c87984bddb5b714046d4077ce'
-CLIENT_SECRET = 'eat_1K2JRPusiWYvRDtKjx1v6Ew6GG05EayY6_45sknR'
+CLIENT_ID = os.getenv('SECRET_CLIENT_ID')
+CLIENT_SECRET = os.getenv('SECRET_CLIENT_SECRET')
 # This must exactly match the callback URL defined in the EVE Developer Portal
 CALLBACK_URL = 'http://localhost' 
 # The scope required to resolve structure IDs
