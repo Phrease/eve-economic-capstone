@@ -3,6 +3,9 @@ from dask.diagnostics import ProgressBar
 import psycopg2
 import io
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 parquet_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/region_10000002_orders/partitioned_market_orders/**/*.parquet")
 
@@ -81,11 +84,11 @@ def transform_and_insert (df, table_name, db_params):
 
 # Configure local db credentials
 db_params = {
-    'dbname': 'eve_economy',
-    'user': 'postgres',
-    'password': 'RmdSgn123456!',
-    'host': 'localhost',
-    'port': '5432'
+    'dbname': os.getenv('DB_NAME'),
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'host': os.getenv('DB_HOST'),
+    'port': os.getenv('DB_PORT')
 }
 
 # Map the pipeline function across all Dask partitions

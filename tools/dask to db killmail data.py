@@ -4,6 +4,9 @@ import pandas as pd
 import psycopg2
 import io
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Target the EVEREF output
 csv_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/combat_logs/everef_*.csv")
@@ -64,11 +67,11 @@ def transform_and_insert_everef(df, table_name, db_params):
     return len(df)
 
 db_params = {
-    'dbname': 'eve_economy',
-    'user': 'postgres',
-    'password': 'RmdSgn123456!',
-    'host': 'localhost',
-    'port': '5432'
+    'dbname': os.getenv('DB_NAME'),
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'host': os.getenv('DB_HOST'),
+    'port': os.getenv('DB_PORT')
 }
 
 write_tasks = ddf.map_partitions(
