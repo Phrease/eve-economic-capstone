@@ -2,7 +2,7 @@ import dask.dataframe as dd
 from dask.diagnostics import ProgressBar
 import os
 
-raw_data_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/region_10000002_orders.csv")
+raw_data_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/region_10000002_orders.parquet")
 output_parquet_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/region_10000002_orders/partitioned_market_orders")
 
 # Defining data types to prevent Dask memory mapping errors
@@ -18,11 +18,7 @@ dtypes = {
 }
 
 # Ingest raw CSV data
-ddf = dd.read_csv(
-    raw_data_path,
-    dtype=dtypes,
-    parse_dates=['issued']
-)
+ddf = dd.read_parquet(raw_data_path)
 
 # Cleane missing partition keys to prevent pyarrow errors
 ddf = ddf.dropna(subset=['system_id'])

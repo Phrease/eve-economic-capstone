@@ -1,5 +1,6 @@
 import dask.dataframe as dd
 from dask.diagnostics import ProgressBar
+import pandas as pd
 import psycopg2
 import io
 import os
@@ -7,10 +8,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-parquet_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/region_10000002_orders/partitioned_market_orders/**/*.parquet")
+base_dir = "C:/Users/durki/OneDrive/Desktop/MIS581/data"
+regions = [
+    "region_10000002_orders",
+    "region_10000030_orders",
+    "region_10000032_orders",
+    "region_10000043_orders"
+]
+
+parquet_paths = [os.path.expanduser(f"{base_dir}/{region}/partitioned_market_orders/**/*.parquet") for region in regions]
 
 # Ingest the Parquet dataset
-ddf = dd.read_parquet(parquet_path, engine='pyarrow')
+ddf = dd.read_parquet(parquet_paths, engine='pyarrow')
 
 # Defining the transformation and COPY execution function for each partition
 def transform_and_insert (df, table_name, db_params):
@@ -25,6 +34,7 @@ def transform_and_insert (df, table_name, db_params):
     df = df.rename(columns={'order_id': 'transaction_id', 'price': 'price_isk'})
 
     # Generate the date_key (YYYYMMDD) integer for datetime column
+    df['issued'] = pd.to_datetime(df['issued'])
     df['date_key'] = df['issued'].dt.strftime('%Y%m%d').astype(int)
 
     # Reorder columns to map to table schema

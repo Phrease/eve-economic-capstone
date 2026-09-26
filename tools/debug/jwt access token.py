@@ -7,12 +7,10 @@ from dotenv import load_dontenv
 
 load_dontenv()
 
-# 1. Define your application credentials and settings
+#  application credentials and settings
 CLIENT_ID = os.getenv('SECRET_CLIENT_ID')
 CLIENT_SECRET = os.getenv('SECRET_CLIENT_SECRET')
-# This must exactly match the callback URL defined in the EVE Developer Portal
 CALLBACK_URL = 'http://localhost' 
-# The scope required to resolve structure IDs
 SCOPES = 'esi-universe.read_structures.v1'
 
 def generate_auth_url():
@@ -75,9 +73,9 @@ if __name__ == '__main__':
             token_response = get_access_token(auth_code)
             access_token = token_response.get('access_token')
             
-            print("\n--- Success! ---")
+            print("\nToken Fetched:")
             print(f"Access Token: {access_token}\n")
-            print("Copy the Access Token above and paste it into your structure discovery script.")
+            print("Copy the Access Token above and paste it into the structure discovery script.")
         except requests.exceptions.HTTPError as e:
             print(f"\nHTTP Error during token exchange: {e.response.text}")
     else:

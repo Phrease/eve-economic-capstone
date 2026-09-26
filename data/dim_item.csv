@@ -38816,7 +38816,7 @@ type_id,item_name,item_category
 62045,Strange Matter Component X-71,Commodity
 62046,Scale Model of a Blue Box,Special Edition Assets
 62047,Inactive Sonic Multitool,Special Edition Assets
-62048,Bag of Gelatinized Confectionary,Special Edition Assets
+62048,Bag of Gelatinized Confectionery,Special Edition Assets
 62049,Chronologically Curious Blue Diary,Special Edition Assets
 62050,Fragment Inscribed with Odd Circular Text,Special Edition Assets
 62051,Snow Globe with Peculiar Architecture,Special Edition Assets
@@ -50293,7 +50293,17 @@ type_id,item_name,item_category
 95964,Starkmanir Hurricane,Entity
 95965,Brutor Hurricane,Entity
 95966,Nefantar Hurricane,Entity
+95974,Pochven Wormholes - Enemy Spawner - EDENCOM - Amarr - Scout - Roamers (DO NOT TRANSLATE),Celestial
+95975,Pochven Wormholes - Enemy Spawner - Rogue Drone - Scout - Roamers (DO NOT TRANSLATE),Celestial
+95976,Pochven Wormholes - Enemy Spawner - Drifter - Scout - Roamers (DO NOT TRANSLATE),Celestial
+95977,Pochven Wormholes - Enemy Spawner - Triglavian - Scout - Roamers (DO NOT TRANSLATE),Celestial
+95978,Pochven Wormholes - Enemy Spawner - EDENCOM - Caldari - Scout - Roamers (DO NOT TRANSLATE),Celestial
+95979,Pochven Wormholes - Enemy Spawner - EDENCOM - Gallente - Scout - Roamers (DO NOT TRANSLATE),Celestial
+95980,Pochven Wormholes - Enemy Spawner - EDENCOM - Minmatar - Scout - Roamers (DO NOT TRANSLATE),Celestial
 96032,Infested Naglfar,Entity
+96036,Corporate Outpost Raid - Moderate ADV-3 - Mordus Spawner (DO NOT TRANSLATE),Celestial
+96037,Corporate Outpost Raid - Moderate ADV-3 - Angel Spawner (DO NOT TRANSLATE),Celestial
+96038,Corporate Outpost Raid - Moderate ADV-3 - Guristas Spawner (DO NOT TRANSLATE),Celestial
 96040,Apostle Khanid Cyber Knight SKIN,SKINs
 96041,Apocalypse Khanid Cyber Knight SKIN,SKINs
 96042,Amarr Shuttle Khanid Cyber Knight SKIN,SKINs
@@ -50362,6 +50372,12 @@ type_id,item_name,item_category
 96334,Minokawa Cold Wind's Call SKIN,SKINs
 96335,Simurgh Cold Wind's Call SKIN,SKINs
 96336,Union Day Celebration Crate,Special Edition Assets
+96601,Non Interactable Talocan Polestar,Celestial
+96602,Non Interactable Talocan Coupling Array,Celestial
+96603,Non Interactable Talocan Outpost Conduit,Celestial
+96604,Non Interactable Talocan Observation Dome,Celestial
+96605,Non Interactable Talocan Static Gate,Celestial
+96606,Non Interactable Talocan Outpost Hub,Celestial
 96607,Circle - Unlimited,Personalization
 96608,Circle - Limited,Personalization
 96609,Circle Outline - Unlimited,Personalization
@@ -50471,6 +50487,51 @@ type_id,item_name,item_category
 97198,Rorqual Nautgripur Industrial Input SKIN,SKINs
 97199,Orca Nautgripur Industrial Input SKIN,SKINs
 97200,Bowhead Nautgripur Industrial Input SKIN,SKINs
+97204,Non Interactable Hollow Talocan Extraction Silo,Celestial
+97205,Non Interactable Inverted Talocan Exchange Depot,Celestial
+97236,Non Interactable Debris - Broken Drive Unit,Celestial
+97239,Non Interactable Debris - Broken Drive Unit,Celestial
+97240,Non Interactable Debris - Crumpled Metal,Celestial
+97241,Non Interactable Debris - Power Feed,Celestial
+97242,Mutated Omnidirectional Tracking Link,Module
+97243,Mutated Drone Navigation Computer,Module
+97244,Mutated Omnidirectional Tracking Enhancer,Module
+97245,Mutated Drone Link Augmentor,Module
+97246,Radical Omnidirectional Tracking Enhancer Mutaplasmid,Commodity
+97247,Radical Drone Link Augmentor Mutaplasmid,Commodity
+97248,Radical Omnidirectional Tracking Link Mutaplasmid,Commodity
+97249,Radical Drone Navigation Computer Mutaplasmid,Commodity
+97263,Hybrid Drone Specialization,Skill
+97314,YC128 Shifting-Spacetime Crate,Special Edition Assets
+97348,Wormhole Pilot,Expert Systems
+97406,Insurgent,Expert Systems
+97465,FW Complex - Small Assault-1 - Attacker Spawner (DO NOT TRANSLATE),Celestial
+97466,FW Complex - Small Assault-1 - Occupier Spawner (DO NOT TRANSLATE),Celestial
+97467,Small Assault Military Beacon,Celestial
+97468,Renouncer Retribution,Entity
+97469,Detainer Harpy,Entity
+97470,Inspector Enyo,Entity
+97471,Keeper Wolf,Entity
+97487,Sleepless Defender,Entity
+97488,Emergent Preserver,Entity
+97489,Emergent Upholder,Entity
+97490,Sleepless Preserver,Entity
+97491,Emergent Escort,Entity
+97492,Awakened Escort,Entity
+97493,Emergent Patroller,Entity
+97494,Awakened Patroller,Entity
+97497,Awakened Watchman,Entity
+97498,Emergent Watchman,Entity
+97499,Sleepless Patroller,Entity
+97500,Sleepless Watchman,Entity
+97501,Sleepless Escort,Entity
+97502,Sleepless Outguard,Entity
+97503,Awakened Defender,Entity
+97504,Awakened Upholder,Entity
+97505,Awakened Preserver,Entity
+97506,Sleepless Upholder,Entity
+97507,Emergent Defender,Entity
+97658,Moderate Corporate Outpost Beacon,Celestial
 350916,Plasma Cannon,Infantry
 351063,Heavy Machine Gun,Infantry
 351071,Assault C-I,Infantry

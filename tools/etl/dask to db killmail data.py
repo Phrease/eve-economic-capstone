@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Target the EVEREF output
-csv_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/combat_logs/everef_*.csv")
-ddf = dd.read_csv(csv_path)
+parquet_path = os.path.expanduser("C:/Users/durki/OneDrive/Desktop/MIS581/data/combat_logs/everef_*.parquet")
+ddf = dd.read_parquet(parquet_path)
 
 def transform_and_insert_everef(df, table_name, db_params):
     if df.empty:

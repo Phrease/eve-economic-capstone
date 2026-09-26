@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import time
+from pathlib import Path
 
 def pull_regional_market_data(region_id):
     """
@@ -48,8 +49,10 @@ if __name__ == "__main__":
 
     df_market = pull_regional_market_data(target_region)
     print(f"\nTotal orders retrieved: {len(df_market)}")
+    script_dir = Path(__file__).resolve().parent
+    data_dir = script_dir.parent.parent / "data"
 
-    output_filename = f"region_{target_region}_orders.parquet"
+    output_filename = data_dir / f"region_{target_region}_orders.parquet"
     print(f"Saving to {output_filename}...")
     df_market.to_parquet(output_filename, engine="pyarrow", index=False)
     print("Complete")
