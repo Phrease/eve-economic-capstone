@@ -6,7 +6,8 @@ This repository contains the code and data pipeline for my MBA Capstone research
 The project aims to quanitfy regional economic shifts and inflationary pressures by extracting large-scale market telemetry and apply Difference-in-Differences (DiD) statistical anaylses to model regional market shocks and player-driven economic trends.
 
 ## Tech Stack
-* **Data Processing & ETLL** Python, Dask
+* **Data Processing & ETL** Python, Dask
+* **BI / Data Viz:** Power BI
 * **Database / Data Warehouse:** PostgreSQL
 * **Statistical Analysis / Modeling:** R, SAS Viya
 * **Environment:** PC
