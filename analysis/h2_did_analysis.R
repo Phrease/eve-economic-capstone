@@ -14,7 +14,7 @@ df <- df %>%
 weekly_df <- df %>%
   group_by(system_name, is_central_hub, week_start) %>%
   summarize(
-    # Average the spread over a week. ignore daily NAs
+    # Average the spread over a week.ignore daily NAs
     weekly_spread = mean(bid_ask_spread, na.rm=TRUE),
     
     # Sum the macroeconomic volume and destruction metrics
@@ -29,5 +29,17 @@ weekly_df <- df %>%
 # Evaluating if pricing inefficiencies (spread) impact macroeconomic velocity (volume)
 # Controlling for whether the system is a central hub to isolate the spread's effect
 h2_model <- lm(weekly_volume ~ weekly_spread + is_central_hub, data = weekly_df)
-
 summary(h2_model)
+
+# Highlighting the week_spread_p_value
+summary_text <- capture.output(summary(h2_model))
+
+full_output <- paste(summary_text, collapse = "\n")
+
+target_weekly_spread_p <- "0.15068"
+
+highlighted_weekly_spread_p <- bg_yellow(col_black(target_weekly_spread_p))
+
+full_output <- str_replace(full_output, fixed(target_weekly_spread_p), highlighted_weekly_spread_p)
+
+cat(full_output, "\n")
