@@ -45,14 +45,29 @@ def pull_regional_market_data(region_id):
     return pd.DataFrame(orders)
 
 if __name__ == "__main__":
-    target_region = 10000002
+    # Directory of target regions and their corresponding ESI Region IDs
+    target_regions = {
+        "The Forge": 10000002,
+        "Heimatar": 10000030,
+        "Sinq Laison": 10000032,
+        "Domain": 10000043
+    }
 
-    df_market = pull_regional_market_data(target_region)
-    print(f"\nTotal orders retrieved: {len(df_market)}")
     script_dir = Path(__file__).resolve().parent
     data_dir = script_dir.parent.parent / "data"
 
-    output_filename = data_dir / f"region_{target_region}_orders.parquet"
-    print(f"Saving to {output_filename}...")
-    df_market.to_parquet(output_filename, engine="pyarrow", index=False)
-    print("Complete")
+    # Ensuring data directory exists
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    for region_name, region_id in target_regions.items():
+        print(f"\n Processing {region_name} (Region ID: {region_id})")
+
+        df_market = pull_regional_market_data(region_id)
+        print(f"Total orders retrieve for {region_name}: {len(df_market)}")
+
+        # Save each region to its own parquet file
+        output_filename = data_dir / f"region_{region_name}_{region_name.replace(' ', '_')}_orders.parquet"
+        print(f"Saving to {output_filename}...")
+        df_market.to_parquet(output_filename, engine="pyarrow", index=False)
+
+    print("\nComplete")
