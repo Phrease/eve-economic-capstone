@@ -27,3 +27,16 @@ The workflow is divided into three primary phases:
 3. **Statistical Modeling (R & Sas Viya):**
    * Difference-in-Differeneces (DiD): R scripts pull data from the exported dataset via Power BI matrix to execute DiD analyses, evaluating the causal impact of specific game events or macroeconomic shocks on regional pricing.
    * Advanced Telemetry Modeling: SAS Viya is integrated to run high-performance forecasting and regression models on the inflation data.
+
+## DB Setup
+Step-by-step guide on running the db locally:
+
+**Ensure you have pgAdmin installed before running**
+
+1. Create the Target Database (if it doesn't exist)
+   ```createdb -U <your_username> -h localhost <your_database_name>```
+   
+2. Run the table ```creation.sql``` script to configure the tables
+   
+3. Import the .sql File
+   ```psql -U <your_username> -h localhost -d <your_database_name> -f <path/to/db/eve-economy-db.sql>```
